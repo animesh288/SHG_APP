@@ -9,6 +9,7 @@
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/drawable/roundedcorner.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_add_product.xml" value="0.4" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_approved_order.xml" value="0.24635416666666668" />
+        <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_approved_order_details.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_bid.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_edit_product.xml" value="0.24635416666666668" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_home.xml" value="0.264" />
@@ -16,6 +17,7 @@
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_orders.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/activity_stock.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/approved_order_item.xml" value="0.24635416666666668" />
+        <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/approved_product_item.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/dropdown_item.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/SelfHelpGroupAndroidApp/app/src/main/res/layout/item_item.xml" value="0.46589446589446587" />

@@ -24,7 +24,6 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
 
     List<Item> itemList;
     Context context;
-//    ItemBidListener listener;
     List<BidSubRequest> bidSubRequests;
 
     public List<BidSubRequest> getBidSubRequests() {
