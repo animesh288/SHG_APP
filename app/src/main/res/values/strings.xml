@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SelfHelpGroup-AndroidApp</string>
+    <string name="name">छत्तीसगढ़ शासन</string>
+    <string name="otp">ओटीपी के लिए मोबाइल नंबर दर्ज करें</string>
+    <string name="phone_number">फ़ोन नंबर</string>
+    <string name="submit">दर्ज करे</string>
+    <string name="otp_sent">हमने आपको +91 7067477857 पर एक एसएमएस भेजा है 6 अंकों के ओटीपी के साथ।</string>
+    <string name="enter_otp">ओटीपी दर्ज करें</string>
+    <string name="otp_code">ओटीपी</string>
+    <string name="didnot_recieve">कोड प्राप्त नहीं हुआ?</string>
+    <string name="resend">पुन: भेजें</string>
+    <string name="wait">wait</string>
+    <string-array name="types">
+        <item>खुला</item>
+        <item>बंद</item>
+    </string-array>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="bid">bid</string>
+    <string name="cancel">cancel</string>
+    <string name="login">login</string>
+    <string name="delete_product_approved_order">विभाग द्वारा ्वीकृत आर्डर पुष्टि होने पर ही हटाया जा सकता है।</string>
+    <string name="app_description">सरकारी विभागों और संगठनों को आईसीटी (सूचना और संचार प्रौद्योगिकी) सेवाएं प्रदान करने के लिए वर्ष 2001 में एन.आई.सी. का छत्तीसगढ़ राज्य केन्द्र (सी.जी.एस.सी) रायपुर में स्थापित किया गया था। जिला केन्द्रों की गतिविधियों का प्रबंधन करने के लिए अत्याधुनिक विडियो कॉन्फरेंसिंग स्टूडियो, हाई स्पीड निकनेट (एन.आई.सी. इंटरनेट) कनेक्टिविटी और डी.आई.ओ./डी.आई.ए. के साथ सभी 27 जिलों में जिला केंद्र कार्यरत हैं और राज्य में विभिन्न ई-गवर्नेंस नागरिक सेवाओं को निर्विघ्न प्रदाय करने के दायित्व का निर्वहन करते हैं। एन.आई.सी. ने पिछले 26 वर्षों के दौरान राष्ट्रीय, राज्य और जिला स्तर पर सूचना विज्ञान विकास कार्यक्रम में एक सक्रिय उत्प्रेरक और सूत्रधार की महत्वपूर्ण भूमिका निभाई है, एन.आई.सी. ने सामाजिक रूप से ई-गवर्नेंस को बढ़ावा दिया है। डिजिटल प्रौद्योगिकी द्वारा प्रदान किए गए अवसरों का उपयोग करके प्रतिस्पर्धात्मक लाभ एन.आई.सी. ने प्रत्येक स्तर तक पहुँचने एवं सूचना और संचार प्रौद्योगिकी को अपनाने में महत्वपूर्ण भूमिका निभाई है यानी सामाजिक और लोक प्रशासन में आईटी अनुप्रयोगों को लागू करने में सहायता की है। राज्य सरकार, जिला सरकार और छत्तीसगढ़ के नागरिकों को अत्याधुनिक ई-गवर्नेंस समाधान प्रदान करने के लिए एनआईसी छत्तीसगढ़ के प्रयासों को राष्ट्रीय, राज्य और जिला स्तर पर विभिन्न प्रतिष्ठित पुरस्कारों से सम्मानित किया गया है।</string>
+    <string name="stock">भंडार</string>
+    <string name="order">आर्डर</string>
+    <string name="approved_stock">स्वीकृत आर्डर</string>
+    <string name="mfg">निर्माण तिथि</string>
+    <string name="exp">समाप्ति तिथि</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
