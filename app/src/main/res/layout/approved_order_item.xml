@@ -29,26 +29,26 @@
             android:textColor="@color/black"
             android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
-            android:id="@+id/name"
-            app:layout_constraintEnd_toStartOf="@+id/itemquantity"/>
+            android:id="@+id/instituteName"
+            />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/image1"
             android:id="@+id/department"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/instituteName"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/segoeui"
             android:textSize="18dp"
-            app:layout_constraintEnd_toStartOf="@+id/itemquantity"/>
+            />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/image1"
-            android:id="@+id/institute"
+            android:id="@+id/instituteLocation"
             app:layout_constraintTop_toBottomOf="@id/department"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
@@ -56,20 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:fontFamily="@font/segoeui"
             android:textSize="18dp"
-            app:layout_constraintEnd_toStartOf="@+id/itemquantity"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/itemquantity"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/poppinsbold"
-            android:textColor="@color/teal_700"
-            android:textSize="25dp"/>
-
+            />
 
 
 

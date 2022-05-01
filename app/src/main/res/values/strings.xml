@@ -26,6 +26,4 @@
     <string name="approved_stock">स्वीकृत आर्डर</string>
     <string name="mfg">निर्माण तिथि</string>
     <string name="exp">समाप्ति तिथि</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

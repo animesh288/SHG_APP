@@ -7,20 +7,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.adapter.ApprovedOrderAdapter;
+import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
 import com.android.selfhelpgroup_androidapp.approvedOrders.viewmodel.ApprovedOrderViewModel;
 import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
-import com.android.selfhelpgroup_androidapp.data.modal.Order;
-import com.android.selfhelpgroup_androidapp.orders.adapter.OrderAdapter;
-import com.android.selfhelpgroup_androidapp.orders.ui.OrdersActivity;
-import com.android.selfhelpgroup_androidapp.orders.viewmodel.OrderActivityViewModel;
 
 import java.util.List;
 
-public class ApprovedOrderActivity extends AppCompatActivity {
+public class ApprovedOrderActivity extends AppCompatActivity implements ApprovedOrderListener {
 
     ApprovedOrderViewModel approvedOrderViewModel;
     RecyclerView recyclerView;
@@ -52,7 +50,7 @@ public class ApprovedOrderActivity extends AppCompatActivity {
                 if(orders!=null){
                     orderList=orders;
                     recyclerView.setLayoutManager(new LinearLayoutManager(ApprovedOrderActivity.this));
-                    ApprovedOrderAdapter orderAdapter=new ApprovedOrderAdapter();
+                    ApprovedOrderAdapter orderAdapter=new ApprovedOrderAdapter(ApprovedOrderActivity.this,ApprovedOrderActivity.this);
                     orderAdapter.setOrderList(orderList);
                     orderAdapter.setContext(ApprovedOrderActivity.this);
                     recyclerView.setAdapter(orderAdapter);
@@ -66,5 +64,12 @@ public class ApprovedOrderActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         approvedOrderViewModel=new ViewModelProvider(this).get(ApprovedOrderViewModel.class);
         swipeRefreshLayout=findViewById(R.id.swipe);
+    }
+
+    @Override
+    public void onClick(int pos) {
+        Intent intent=new Intent(ApprovedOrderActivity.this, ApprovedOrderDetails.class);
+        intent.putExtra("Order",orderList.get(pos));
+        startActivity(intent);
     }
 }

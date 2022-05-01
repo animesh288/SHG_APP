@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SelfHelpGroupAndroidApp">
         <activity
+            android:name=".approvedOrders.ui.ApprovedOrderDetails"
+            android:exported="false" />
+        <activity
             android:name=".itemBid.ui.BidActivity"
             android:exported="false" />
         <activity

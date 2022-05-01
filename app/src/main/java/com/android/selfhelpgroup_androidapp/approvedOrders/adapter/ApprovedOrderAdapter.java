@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.holder.ApprovedOrderHolder;
+import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
 import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
 import com.android.selfhelpgroup_androidapp.data.modal.Order;
 
@@ -19,6 +20,7 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
 
     List<ApprovedOrder> orderList;
     Context context;
+    ApprovedOrderListener approvedOrderListener;
 
     public List<ApprovedOrder> getOrderList() {
         return orderList;
@@ -36,19 +38,23 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
         this.context = context;
     }
 
+    public ApprovedOrderAdapter(Context context, ApprovedOrderListener approvedOrderListener) {
+        this.context = context;
+        this.approvedOrderListener = approvedOrderListener;
+    }
+
     @NonNull
     @Override
     public ApprovedOrderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.approved_order_item,parent,false);
-        return new ApprovedOrderHolder(view);
+        return new ApprovedOrderHolder(view,approvedOrderListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ApprovedOrderHolder holder, int position) {
-        holder.name.setText(orderList.get(position).getName());
-        holder.department.setText(orderList.get(position).getDepartment());
-        holder.institute.setText(orderList.get(position).getInstituteName());
-        holder.quantity.setText(orderList.get(position).getQuantity()+" "+orderList.get(position).getUnit());
+        holder.instituteName.setText(orderList.get(position).getInstituteName());
+        holder.departmentName.setText(orderList.get(position).getDepartment());
+        holder.instituteLocation.setText("पता : "+orderList.get(position).getInstituteLocation());
     }
 
     @Override

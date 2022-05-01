@@ -8,17 +8,31 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
+import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
+import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
 
 public class ApprovedOrderHolder extends RecyclerView.ViewHolder {
 
-    public TextView name,type,department,institute,quantity;
+    public TextView instituteName,departmentName,instituteLocation;
 
-    public ApprovedOrderHolder(@NonNull View itemView) {
+    public ApprovedOrderHolder(@NonNull View itemView, ApprovedOrderListener approvedOrderListener) {
         super(itemView);
-        name=itemView.findViewById(R.id.name);
-        type=itemView.findViewById(R.id.type);
-        department=itemView.findViewById(R.id.department);
-        institute=itemView.findViewById(R.id.institute);
-        quantity=itemView.findViewById(R.id.itemquantity);
+
+        instituteName=itemView.findViewById(R.id.instituteName);
+        departmentName=itemView.findViewById(R.id.department);
+        instituteLocation=itemView.findViewById(R.id.instituteLocation);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(approvedOrderListener!=null){
+                    int pos=getAdapterPosition();
+
+                    if(pos!=RecyclerView.NO_POSITION){
+                        approvedOrderListener.onClick(pos);
+                    }
+                }
+            }
+        });
     }
 }
