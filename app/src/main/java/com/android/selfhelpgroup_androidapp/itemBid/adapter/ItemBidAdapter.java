@@ -38,7 +38,6 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
         this.itemList = itemList;
         this.context = context;
         bidSubRequests=new ArrayList<>();
-//        this.listener=listener;
 
         for(int i=0;i<itemList.size();i++){
             bidSubRequests.add(new BidSubRequest(itemList.get(i).getItemId(),0));
