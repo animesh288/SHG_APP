@@ -88,6 +88,10 @@ public class BidActivity extends AppCompatActivity {
                 local.add(new BidSubRequest(x.getProductId(),x.getQuantity()));
             }
         }
+        if(local==null || local.size()==0){
+            Toast.makeText(this, "add product", Toast.LENGTH_SHORT).show();
+            return;
+        }
         bidRequest.setProducts(local);
         if(NetworkUtil.isNetworkConnected(this)){
             ServiceApi serviceApi=retrofit.create(ServiceApi.class);
