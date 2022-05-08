@@ -85,7 +85,7 @@ public class BidActivity extends AppCompatActivity {
         ArrayList<BidSubRequest> local=new ArrayList<>();
         for(BidSubRequest x:bidRequest.getProducts()){
             if(x.getQuantity()>0){
-                local.add(new BidSubRequest(x.getProductId(),x.getQuantity()));
+                local.add(new BidSubRequest(x.getProductId(),x.getQuantity(),x.getUnitPrice()));
             }
         }
         if(local==null || local.size()==0){

@@ -40,7 +40,7 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
         bidSubRequests=new ArrayList<>();
 
         for(int i=0;i<itemList.size();i++){
-            bidSubRequests.add(new BidSubRequest(itemList.get(i).getItemId(),0));
+            bidSubRequests.add(new BidSubRequest(itemList.get(i).getItemId(),0,0));
         }
     }
 
@@ -74,6 +74,23 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
 
             }
         });
+        holder.bidPrice.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s!=null && s.length()>0) bidSubRequests.get(position).setUnitPrice(Integer.parseInt(s.toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     @Override

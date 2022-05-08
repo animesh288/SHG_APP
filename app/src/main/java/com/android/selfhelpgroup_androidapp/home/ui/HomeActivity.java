@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,6 +45,8 @@ public class HomeActivity extends AppCompatActivity {
         initAlertDialog();
 
         initSlider();
+
+        Log.i("animesh",new SessionManager(HomeActivity.this).getToken());
 
         stock.setOnClickListener(new View.OnClickListener() {
             @Override
