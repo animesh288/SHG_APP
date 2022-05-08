@@ -4,7 +4,8 @@
     <string name="otp">ओटीपी के लिए मोबाइल नंबर दर्ज करें</string>
     <string name="phone_number">फ़ोन नंबर</string>
     <string name="submit">दर्ज करे</string>
-    <string name="otp_sent">हमने आपको +91 7067477857 पर एक एसएमएस भेजा है 6 अंकों के ओटीपी के साथ।</string>
+    <string name="otp_sent_1">हमने आपको </string>
+    <string name="otp_sent_2"> पर एक एसएमएस भेजा है 6 अंकों के ओटीपी के साथ।</string>
     <string name="enter_otp">ओटीपी दर्ज करें</string>
     <string name="otp_code">ओटीपी</string>
     <string name="didnot_recieve">कोड प्राप्त नहीं हुआ?</string>

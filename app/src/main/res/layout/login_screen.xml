@@ -89,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="@string/phone_number"
+                android:maxLength="10"
                 android:textAlignment="center"
                 android:padding="15dp"
                 android:background="@drawable/box"

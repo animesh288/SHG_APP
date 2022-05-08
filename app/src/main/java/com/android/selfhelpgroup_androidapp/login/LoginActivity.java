@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     LoginResponse loginResponse=response.body();
                     sessionManager.saveShgId(loginResponse.getShgId());
+                    sessionManager.saveContact(phone);
                     startActivity(new Intent(LoginActivity.this,OtpActivity.class));
                     finish();
                 }

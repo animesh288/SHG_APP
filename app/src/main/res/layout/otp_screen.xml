@@ -33,7 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image1"
-        android:text="@string/otp_sent"
         android:textAlignment="center"
         android:padding="15dp"
         android:fontFamily="@font/poppinsbold"/>
