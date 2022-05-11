@@ -88,15 +88,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initFirebaseNotification() {
-        FirebaseMessaging.getInstance().subscribeToTopic("weather")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "done";
+                    public void onComplete(@NonNull Task<String> task) {
                         if (!task.isSuccessful()) {
-                            msg = "failed";
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
                         }
-                        Log.d(TAG, msg);
+                        String token = task.getResult();
+                        Log.d("animesh", token);
                     }
                 });
     }

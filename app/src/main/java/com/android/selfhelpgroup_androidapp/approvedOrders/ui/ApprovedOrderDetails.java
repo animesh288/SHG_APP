@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.selfhelpgroup_androidapp.R;
@@ -17,6 +19,8 @@ public class ApprovedOrderDetails extends AppCompatActivity {
     ApprovedOrder approvedOrder;
     TextView instituteName,departmentName,instituteLocation;
     RecyclerView recyclerView;
+    Button print;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +29,25 @@ public class ApprovedOrderDetails extends AppCompatActivity {
         Intent intent=getIntent();
         approvedOrder= (ApprovedOrder) intent.getSerializableExtra("Order");
         init();
+        print.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                generatePdf();
+            }
+        });
 
     }
+
+    private void generatePdf() {
+    }
+
     public void init(){
         instituteName=findViewById(R.id.instituteName);
         instituteLocation=findViewById(R.id.instituteLocation);
         departmentName=findViewById(R.id.departmentName);
         recyclerView=findViewById(R.id.recyclerView);
+        print=findViewById(R.id.print);
+        
         instituteLocation.setText(approvedOrder.getInstituteLocation());
         instituteName.setText(approvedOrder.getInstituteName());
         departmentName.setText(approvedOrder.getDepartment());

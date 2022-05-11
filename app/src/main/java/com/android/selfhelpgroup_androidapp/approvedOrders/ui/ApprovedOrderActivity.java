@@ -26,7 +26,6 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
     RecyclerView recyclerView;
     List<ApprovedOrder> orderList;
     SwipeRefreshLayout swipeRefreshLayout;
-    Button print;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +43,9 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
             }
         });
 
-        print.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                generatePdf();
-            }
-        });
+
 
         getOrders();
-    }
-
-    private void generatePdf() {
-
     }
 
     private void getOrders() {
@@ -79,7 +69,6 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
         recyclerView=findViewById(R.id.recyclerView);
         approvedOrderViewModel=new ViewModelProvider(this).get(ApprovedOrderViewModel.class);
         swipeRefreshLayout=findViewById(R.id.swipe);
-        print=findViewById(R.id.print);
     }
 
     @Override
