@@ -51,6 +51,7 @@ public class ApprovedProductAdapter extends RecyclerView.Adapter<ApprovedProduct
     public void onBindViewHolder(@NonNull ApprovedProductHolder holder, int position) {
         holder.itemName.setText(productList.get(position).getProduct());
         holder.itemQuantity.setText(productList.get(position).getQuantity()+productList.get(position).getUnit());
+        holder.price.setText(productList.get(position).getPrice()+" ₹");
     }
 
     @Override

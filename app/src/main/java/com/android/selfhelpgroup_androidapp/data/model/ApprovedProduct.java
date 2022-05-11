@@ -18,14 +18,18 @@ public class ApprovedProduct implements Serializable {
     @SerializedName("_id")
     private String id;
 
+    @SerializedName("totalprice")
+    private Integer price;
+
     public ApprovedProduct() {
     }
 
-    public ApprovedProduct(String product, Integer quantity, String unit, String id) {
+    public ApprovedProduct(String product, Integer quantity, String unit, String id,Integer price) {
         this.product = product;
         this.quantity = quantity;
         this.unit = unit;
         this.id = id;
+        this.price=price;
     }
 
     public String getProduct() {
@@ -60,6 +64,12 @@ public class ApprovedProduct implements Serializable {
         this.id = id;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
 
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
 }
 
