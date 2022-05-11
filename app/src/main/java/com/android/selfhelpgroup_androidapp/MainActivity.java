@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                Log.i("animesh",new SessionManager(MainActivity.this).getToken());
                 Intent i1=new Intent(MainActivity.this, LoginActivity.class);
                 Intent i2=new Intent(MainActivity.this, HomeActivity.class);
                 if(new SessionManager(MainActivity.this).getToken()!=null) startActivity(i2);

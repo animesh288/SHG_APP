@@ -9,6 +9,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.adapter.ApprovedOrderAdapter;
@@ -24,6 +26,7 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
     RecyclerView recyclerView;
     List<ApprovedOrder> orderList;
     SwipeRefreshLayout swipeRefreshLayout;
+    Button print;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,20 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
             }
         });
 
+        print.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                generatePdf();
+            }
+        });
+
         getOrders();
     }
+
+    private void generatePdf() {
+
+    }
+
     private void getOrders() {
         approvedOrderViewModel.getLiveData(this).observe(this, new Observer<List<ApprovedOrder>>() {
             @Override
@@ -64,6 +79,7 @@ public class ApprovedOrderActivity extends AppCompatActivity implements Approved
         recyclerView=findViewById(R.id.recyclerView);
         approvedOrderViewModel=new ViewModelProvider(this).get(ApprovedOrderViewModel.class);
         swipeRefreshLayout=findViewById(R.id.swipe);
+        print=findViewById(R.id.print);
     }
 
     @Override

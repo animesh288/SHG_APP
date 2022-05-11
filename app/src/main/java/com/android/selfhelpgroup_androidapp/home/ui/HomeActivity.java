@@ -1,5 +1,8 @@
 package com.android.selfhelpgroup_androidapp.home.ui;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
@@ -21,6 +25,9 @@ import com.android.selfhelpgroup_androidapp.login.LoginActivity;
 import com.android.selfhelpgroup_androidapp.orders.ui.OrdersActivity;
 import com.android.selfhelpgroup_androidapp.stock.ui.StockActivity;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -45,6 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         initAlertDialog();
 
         initSlider();
+
+        initFirebaseNotification();
 
         Log.i("animesh",new SessionManager(HomeActivity.this).getToken());
 
@@ -76,6 +85,20 @@ public class HomeActivity extends AppCompatActivity {
                 alertDialog.show();
             }
         });
+    }
+
+    private void initFirebaseNotification() {
+        FirebaseMessaging.getInstance().subscribeToTopic("weather")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "done";
+                        if (!task.isSuccessful()) {
+                            msg = "failed";
+                        }
+                        Log.d(TAG, msg);
+                    }
+                });
     }
 
     private void initSlider() {
