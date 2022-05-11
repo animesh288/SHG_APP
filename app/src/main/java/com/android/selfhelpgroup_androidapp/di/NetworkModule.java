@@ -1,6 +1,7 @@
 package com.android.selfhelpgroup_androidapp.di;
 
 import com.android.selfhelpgroup_androidapp.network.Constants;
+import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 
 
 import javax.inject.Singleton;
@@ -20,5 +21,11 @@ public class NetworkModule {
                 .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
+
+    @Singleton
+    @Provides
+    public ServiceApi provideServiceApi(){
+        return provideRetrofit().create(ServiceApi.class);
     }
 }

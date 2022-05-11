@@ -49,6 +49,9 @@ public class BidActivity extends AppCompatActivity {
     @Inject
     Retrofit retrofit;
 
+    @Inject
+    ServiceApi serviceApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +97,7 @@ public class BidActivity extends AppCompatActivity {
         }
         bidRequest.setProducts(local);
         if(NetworkUtil.isNetworkConnected(this)){
-            ServiceApi serviceApi=retrofit.create(ServiceApi.class);
+            serviceApi=retrofit.create(ServiceApi.class);
             Call<Message> call=serviceApi.bidProduct("Bearer "+ new SessionManager(this).getToken(),bidRequest);
             call.enqueue(new Callback<Message>() {
                 @Override

@@ -1,6 +1,7 @@
 package com.android.selfhelpgroup_androidapp.approvedOrders.viewmodel;
 
 import android.app.Application;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,10 +33,12 @@ import retrofit2.Retrofit;
 public class ApprovedOrderViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<ApprovedOrder>> liveData;
+    ProgressDialog progressDialog;
 
     @Inject
     Retrofit retrofit;
 
+    @Inject
     ServiceApi serviceApi;
 
     public ApprovedOrderViewModel(@NonNull Application application) {
@@ -44,36 +47,41 @@ public class ApprovedOrderViewModel extends AndroidViewModel {
         ((BaseApplication)getApplication()).getNetworkComponent().inject(ApprovedOrderViewModel.this);
     }
     public MutableLiveData<List<ApprovedOrder>> getLiveData(Context context){
-        if(serviceApi==null){
-            serviceApi=retrofit.create(ServiceApi.class);
-            createCall(context);
-        }
+        createCall(context);
         return liveData;
     }
     private void createCall(Context context) {
+        progressDialog=new ProgressDialog(context);
+        progressDialog.setMessage("loading...");
+        progressDialog.show();
         if(NetworkUtil.isNetworkConnected(context)){
             Call<ApprovedOrderResponse> call=serviceApi.getApprovedOrders("Bearer "+ new SessionManager(context).getToken());
             call.enqueue(new Callback<ApprovedOrderResponse>() {
                 @Override
                 public void onResponse(Call<ApprovedOrderResponse> call, Response<ApprovedOrderResponse> response) {
-                    if(response.isSuccessful()){
+                    if(response.code()==401) new SessionManager(context).logoutUser();
+                    else if(response.isSuccessful()){
                         liveData.postValue(response.body().getProducts());
+                        progressDialog.dismiss();
                     }else{
                         try {
                             Log.i("animesh",response.errorBody().string());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        progressDialog.dismiss();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<ApprovedOrderResponse> call, Throwable t) {
                     Log.i("animesh",t.getMessage());
+                    progressDialog.dismiss();
                 }
             });
         }else{
             Toast.makeText(context, "No internet", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
     }
 }

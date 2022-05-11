@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.itemBid.ui.BidActivity;
 import com.android.selfhelpgroup_androidapp.R;
@@ -32,6 +34,7 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
+
         init();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -50,7 +53,7 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
         orderActivityViewModel.getLiveData(this).observe(this, new Observer<List<Order>>() {
             @Override
             public void onChanged(List<Order> orders) {
-                if(orders!=null){
+                if(orders!=null && orders.size()>0){
                     orderList=orders;
                     recyclerView.setLayoutManager(new LinearLayoutManager(OrdersActivity.this));
                     orderAdapter=new OrderAdapter(OrdersActivity.this,OrdersActivity.this);
@@ -58,6 +61,8 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
                     orderAdapter.setContext(OrdersActivity.this);
                     recyclerView.setAdapter(orderAdapter);
                     orderAdapter.notifyDataSetChanged();
+                }else{
+                    Toast.makeText(OrdersActivity.this, "no orders to show", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -75,4 +80,5 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
         intent.putExtra("Order",orderList.get(position));
         startActivity(intent);
     }
+
 }

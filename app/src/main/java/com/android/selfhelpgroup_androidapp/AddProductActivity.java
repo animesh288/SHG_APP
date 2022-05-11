@@ -53,6 +53,9 @@ public class AddProductActivity extends AppCompatActivity {
     @Inject
     Retrofit retrofit;
 
+    @Inject
+    ServiceApi serviceApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,7 +209,7 @@ public class AddProductActivity extends AppCompatActivity {
 
     private void createCall() {
         if(NetworkUtil.isNetworkConnected(this)){
-            ServiceApi serviceApi=retrofit.create(ServiceApi.class);
+            serviceApi=retrofit.create(ServiceApi.class);
             Call<Message> call=serviceApi.addProduct("Bearer "+ new SessionManager(this).getToken(),product);
             call.enqueue(new Callback<Message>() {
                 @Override

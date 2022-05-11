@@ -46,12 +46,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductsHolder> {
     private AlertDialog mDialog;
     private int mListRowPosition;
     private ProgressDialog pd;
-    ServiceApi serviceApi;
     Intent intent;
     AlertDialog.Builder builder;
 
     @Inject
     Retrofit retrofit;
+
+    @Inject
+    ServiceApi serviceApi;
 
     public ProductAdapter(ProductClickListener listener,Context context) {
         this.listener = listener;

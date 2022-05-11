@@ -38,10 +38,12 @@ public class OtpActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     ProgressDialog pd;
     private TextView text2;
-    ServiceApi serviceApi;
 
     @Inject
     Retrofit retrofit;
+
+    @Inject
+    ServiceApi serviceApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

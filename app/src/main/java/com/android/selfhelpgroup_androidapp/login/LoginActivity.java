@@ -35,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     @Inject
     Retrofit retrofit;
 
+    @Inject
+    ServiceApi serviceApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         LoginRequest loginRequest=new LoginRequest();
         loginRequest.setContact(phone);
 
-        ServiceApi serviceApi= retrofit.create(ServiceApi.class);
+        serviceApi= retrofit.create(ServiceApi.class);
 
         Call<LoginResponse> call=serviceApi.getLoginResponse(loginRequest);
 

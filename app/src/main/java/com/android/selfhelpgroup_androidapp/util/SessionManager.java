@@ -1,7 +1,14 @@
 package com.android.selfhelpgroup_androidapp.util;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.android.selfhelpgroup_androidapp.R;
+import com.android.selfhelpgroup_androidapp.login.LoginActivity;
 
 public class SessionManager {
     Context context;
@@ -9,6 +16,7 @@ public class SessionManager {
     private static String SHG_ID="shgId";
     private static String CONTACT="contact";
     private SharedPreferences sh;
+    private AlertDialog.Builder builder;
 
     public SessionManager(Context context) {
         this.context = context;
@@ -51,4 +59,23 @@ public class SessionManager {
         editor.putString(CONTACT,null);
         editor.apply();
     }
+
+    public void logoutUser(){
+        builder=new AlertDialog.Builder(context);
+        builder.setMessage(R.string.relogin_message);
+        builder.setCancelable(false);
+        builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteUser();
+                context.startActivity(new Intent(context,LoginActivity.class));
+                ((Activity)context).finish();
+            }
+        });
+
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
+
+    }
+    
 }

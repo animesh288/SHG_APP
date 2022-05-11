@@ -52,6 +52,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderHolder> {
     @Inject
     Retrofit retrofit;
 
+    @Inject
     ServiceApi serviceApi;
 
     public OrderAdapter(OrderClickListener orderClickListener,Context context){

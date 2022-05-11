@@ -27,4 +27,7 @@
     <string name="approved_stock">स्वीकृत आर्डर</string>
     <string name="mfg">निर्माण तिथि</string>
     <string name="exp">समाप्ति तिथि</string>
+    <string name="quantity">मात्रा</string>
+    <string name="priceperunit">प्रति इकाई मूल्य</string>
+    <string name="relogin_message">सत्र समाप्त हुआ। फिर से लॉगिन करें</string>
 </resources>

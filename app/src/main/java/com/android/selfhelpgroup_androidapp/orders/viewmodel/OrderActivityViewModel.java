@@ -2,8 +2,10 @@ package com.android.selfhelpgroup_androidapp.orders.viewmodel;
 
 import android.app.AlertDialog;
 import android.app.Application;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -11,6 +13,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.android.selfhelpgroup_androidapp.data.modal.Order;
 import com.android.selfhelpgroup_androidapp.data.modal.OrderResponse;
+import com.android.selfhelpgroup_androidapp.data.modal.Product;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
@@ -30,10 +33,11 @@ import retrofit2.Retrofit;
 public class OrderActivityViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Order>> liveData;
-
+    ProgressDialog progressDialog;
     @Inject
     Retrofit retrofit;
 
+    @Inject
     ServiceApi serviceApi;
 
     public OrderActivityViewModel(@NonNull Application application) {
@@ -43,38 +47,46 @@ public class OrderActivityViewModel extends AndroidViewModel {
     }
 
     public MutableLiveData<List<Order>> getLiveData(Context context){
-        if(serviceApi==null){
-            serviceApi=retrofit.create(ServiceApi.class);
-            createCall(context);
-        }
+
+        createCall(context);
         return liveData;
     }
 
+
+
     private void createCall(Context context) {
+        progressDialog=new ProgressDialog(context);
+        progressDialog.setMessage("loading...");
+        progressDialog.show();
         if(NetworkUtil.isNetworkConnected(context)){
             Call<OrderResponse> call=serviceApi.getOrders("Bearer "+ new SessionManager(context).getToken());
             call.enqueue(new Callback<OrderResponse>() {
                 @Override
                 public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
-                    if(response.code()==401){
-                        new SessionManager(context).deleteUser();
-                    }
-                    if(response.isSuccessful()){
+
+                    if(response.code()==401) new SessionManager(context).logoutUser();
+                    else if(response.isSuccessful()){
                         liveData.postValue(response.body().getOrders());
+                        progressDialog.dismiss();
                     }else{
                         try {
                             Log.i("animesh",response.errorBody().string());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        progressDialog.dismiss();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<OrderResponse> call, Throwable t) {
                     Log.i("animesh",t.getMessage());
+                    progressDialog.dismiss();
                 }
             });
+        }else{
+            Toast.makeText(context, "no internet", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
     }
 }
