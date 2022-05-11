@@ -1,16 +1,16 @@
 package com.android.selfhelpgroup_androidapp.network;
 
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrderResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.BidRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.DeleteProductRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.LoginRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.LoginResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.Message;
-import com.android.selfhelpgroup_androidapp.data.modal.OrderResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.OtpRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.OtpResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.Product;
-import com.android.selfhelpgroup_androidapp.data.modal.ProductResponse;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrderResponse;
+import com.android.selfhelpgroup_androidapp.data.model.BidRequest;
+import com.android.selfhelpgroup_androidapp.data.model.DeleteProductRequest;
+import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
+import com.android.selfhelpgroup_androidapp.data.model.LoginResponse;
+import com.android.selfhelpgroup_androidapp.data.model.Message;
+import com.android.selfhelpgroup_androidapp.data.model.OrderResponse;
+import com.android.selfhelpgroup_androidapp.data.model.OtpRequest;
+import com.android.selfhelpgroup_androidapp.data.model.OtpResponse;
+import com.android.selfhelpgroup_androidapp.data.model.Product;
+import com.android.selfhelpgroup_androidapp.data.model.ProductResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

@@ -6,14 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.adapter.ApprovedProductAdapter;
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
-
-import org.w3c.dom.Text;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
 
 public class ApprovedOrderDetails extends AppCompatActivity {
 

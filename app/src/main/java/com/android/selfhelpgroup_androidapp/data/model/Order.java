@@ -1,11 +1,10 @@
-package com.android.selfhelpgroup_androidapp.data.modal;
+package com.android.selfhelpgroup_androidapp.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.zip.DataFormatException;
 
 public class Order implements Serializable {
 

@@ -1,4 +1,4 @@
-package com.android.selfhelpgroup_androidapp.data.modal;
+package com.android.selfhelpgroup_androidapp.data.model;
 
 public class SliderData {
 

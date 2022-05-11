@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.holder.ApprovedProductHolder;
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedProduct;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedProduct;
 
 import java.util.List;
 

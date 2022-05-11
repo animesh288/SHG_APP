@@ -10,15 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrderResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.Order;
-import com.android.selfhelpgroup_androidapp.data.modal.OrderResponse;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrderResponse;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
-import com.android.selfhelpgroup_androidapp.util.Token;
 
 import java.io.IOException;
 import java.util.List;

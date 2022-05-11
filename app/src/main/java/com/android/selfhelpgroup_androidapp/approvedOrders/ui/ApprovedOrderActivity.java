@@ -14,7 +14,7 @@ import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.adapter.ApprovedOrderAdapter;
 import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
 import com.android.selfhelpgroup_androidapp.approvedOrders.viewmodel.ApprovedOrderViewModel;
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
 
 import java.util.List;
 

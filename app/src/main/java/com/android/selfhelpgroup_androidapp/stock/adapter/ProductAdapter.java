@@ -15,16 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.DeleteProductRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.Message;
-import com.android.selfhelpgroup_androidapp.data.modal.Product;
+import com.android.selfhelpgroup_androidapp.data.model.DeleteProductRequest;
+import com.android.selfhelpgroup_androidapp.data.model.Message;
+import com.android.selfhelpgroup_androidapp.data.model.Product;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.stock.holder.ProductsHolder;
 import com.android.selfhelpgroup_androidapp.stock.listener.ProductClickListener;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
-import com.android.selfhelpgroup_androidapp.util.Token;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

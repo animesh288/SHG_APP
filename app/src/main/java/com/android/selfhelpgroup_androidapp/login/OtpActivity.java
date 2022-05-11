@@ -3,7 +3,6 @@ package com.android.selfhelpgroup_androidapp.login;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,12 +11,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.selfhelpgroup_androidapp.data.modal.LoginRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.LoginResponse;
+import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
+import com.android.selfhelpgroup_androidapp.data.model.LoginResponse;
 import com.android.selfhelpgroup_androidapp.home.ui.HomeActivity;
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.OtpRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.OtpResponse;
+import com.android.selfhelpgroup_androidapp.data.model.OtpRequest;
+import com.android.selfhelpgroup_androidapp.data.model.OtpResponse;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;

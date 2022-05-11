@@ -1,7 +1,6 @@
 package com.android.selfhelpgroup_androidapp.approvedOrders.holder;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -9,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
 
 public class ApprovedOrderHolder extends RecyclerView.ViewHolder {
 

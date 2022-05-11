@@ -1,13 +1,8 @@
-package com.android.selfhelpgroup_androidapp.data.modal;
-
-import android.content.Intent;
+package com.android.selfhelpgroup_androidapp.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
 public class BidRequest {
 

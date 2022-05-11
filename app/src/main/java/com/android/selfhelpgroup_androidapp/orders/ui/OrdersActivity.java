@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.itemBid.ui.BidActivity;
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.Order;
+import com.android.selfhelpgroup_androidapp.data.model.Order;
 import com.android.selfhelpgroup_androidapp.orders.adapter.OrderAdapter;
 import com.android.selfhelpgroup_androidapp.orders.listener.OrderClickListener;
 import com.android.selfhelpgroup_androidapp.orders.viewmodel.OrderActivityViewModel;

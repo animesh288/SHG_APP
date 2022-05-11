@@ -2,7 +2,7 @@ package com.android.selfhelpgroup_androidapp.util;
 
 import android.content.Context;
 
-import com.android.selfhelpgroup_androidapp.data.modal.ApprovedOrder;
+import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
 
 public class PrintInvoice {
     Context context;

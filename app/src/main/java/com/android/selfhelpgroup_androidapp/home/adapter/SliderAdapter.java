@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.SliderData;
+import com.android.selfhelpgroup_androidapp.data.model.SliderData;
 import com.bumptech.glide.Glide;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 

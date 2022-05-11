@@ -1,11 +1,11 @@
-package com.android.selfhelpgroup_androidapp.data.modal;
+package com.android.selfhelpgroup_androidapp.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class OtpResponse {
+public class LoginResponse {
 
-    @SerializedName("token")
-    private String token;
+    @SerializedName("shgId")
+    private String shgId;
 
     @SerializedName("message")
     private String message;
@@ -18,11 +18,11 @@ public class OtpResponse {
         this.message = message;
     }
 
-    public String getToken() {
-        return token;
+    public String getShgId() {
+        return shgId;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setShgId(String shgId) {
+        this.shgId = shgId;
     }
 }

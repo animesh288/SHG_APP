@@ -12,10 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.BidSubRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.Item;
+import com.android.selfhelpgroup_androidapp.data.model.BidSubRequest;
+import com.android.selfhelpgroup_androidapp.data.model.Item;
 import com.android.selfhelpgroup_androidapp.itemBid.holder.BidHolder;
-import com.android.selfhelpgroup_androidapp.itemBid.listener.ItemBidListener;
 
 import java.util.ArrayList;
 import java.util.List;

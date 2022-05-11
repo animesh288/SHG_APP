@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.LoginRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.LoginResponse;
+import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
+import com.android.selfhelpgroup_androidapp.data.model.LoginResponse;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;

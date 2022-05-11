@@ -1,6 +1,5 @@
 package com.android.selfhelpgroup_androidapp.orders.viewmodel;
 
-import android.app.AlertDialog;
 import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,14 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.selfhelpgroup_androidapp.data.modal.Order;
-import com.android.selfhelpgroup_androidapp.data.modal.OrderResponse;
-import com.android.selfhelpgroup_androidapp.data.modal.Product;
+import com.android.selfhelpgroup_androidapp.data.model.Order;
+import com.android.selfhelpgroup_androidapp.data.model.OrderResponse;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
-import com.android.selfhelpgroup_androidapp.util.Token;
 
 import java.io.IOException;
 import java.util.List;

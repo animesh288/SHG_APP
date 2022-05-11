@@ -6,25 +6,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.BidRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.BidSubRequest;
-import com.android.selfhelpgroup_androidapp.data.modal.Item;
-import com.android.selfhelpgroup_androidapp.data.modal.Message;
-import com.android.selfhelpgroup_androidapp.data.modal.Order;
+import com.android.selfhelpgroup_androidapp.data.model.BidRequest;
+import com.android.selfhelpgroup_androidapp.data.model.BidSubRequest;
+import com.android.selfhelpgroup_androidapp.data.model.Item;
+import com.android.selfhelpgroup_androidapp.data.model.Message;
+import com.android.selfhelpgroup_androidapp.data.model.Order;
 import com.android.selfhelpgroup_androidapp.itemBid.adapter.ItemBidAdapter;
-import com.android.selfhelpgroup_androidapp.itemBid.listener.ItemBidListener;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
-import com.android.selfhelpgroup_androidapp.orders.ui.OrdersActivity;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
-import com.android.selfhelpgroup_androidapp.util.Token;
 
 import java.io.IOException;
 import java.util.ArrayList;

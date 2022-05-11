@@ -16,14 +16,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.selfhelpgroup_androidapp.data.modal.Message;
-import com.android.selfhelpgroup_androidapp.data.modal.Product;
+import com.android.selfhelpgroup_androidapp.data.model.Message;
+import com.android.selfhelpgroup_androidapp.data.model.Product;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.stock.ui.StockActivity;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
-import com.android.selfhelpgroup_androidapp.util.Token;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;

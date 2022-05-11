@@ -14,11 +14,10 @@ import android.view.View;
 
 import com.android.selfhelpgroup_androidapp.AddProductActivity;
 import com.android.selfhelpgroup_androidapp.R;
-import com.android.selfhelpgroup_androidapp.data.modal.Product;
+import com.android.selfhelpgroup_androidapp.data.model.Product;
 import com.android.selfhelpgroup_androidapp.stock.adapter.ProductAdapter;
 import com.android.selfhelpgroup_androidapp.stock.listener.ProductClickListener;
 import com.android.selfhelpgroup_androidapp.stock.viewmodel.StockActivityViewModel;
-import com.android.selfhelpgroup_androidapp.util.EditProductActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;

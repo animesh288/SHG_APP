@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
-import com.android.selfhelpgroup_androidapp.data.modal.SliderData;
+import com.android.selfhelpgroup_androidapp.data.model.SliderData;
 import com.android.selfhelpgroup_androidapp.home.ImageUrls;
 import com.android.selfhelpgroup_androidapp.home.adapter.SliderAdapter;
 import com.android.selfhelpgroup_androidapp.login.LoginActivity;
