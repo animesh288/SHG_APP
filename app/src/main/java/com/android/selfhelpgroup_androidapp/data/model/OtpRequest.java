@@ -10,6 +10,17 @@ public class OtpRequest {
     @SerializedName("otp")
     private String otp;
 
+    @SerializedName("devicetoken")
+    private String deviceToken;
+
+    public String getDeviceToken() {
+        return deviceToken;
+    }
+
+    public void setDeviceToken(String deviceToken) {
+        this.deviceToken = deviceToken;
+    }
+
     public String getShgId() {
         return shgId;
     }

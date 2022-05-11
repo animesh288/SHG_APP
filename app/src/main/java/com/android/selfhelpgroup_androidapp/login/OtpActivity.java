@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
 import com.android.selfhelpgroup_androidapp.data.model.LoginResponse;
+import com.android.selfhelpgroup_androidapp.firebase_services.FirebaseToken;
 import com.android.selfhelpgroup_androidapp.home.ui.HomeActivity;
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.data.model.OtpRequest;
@@ -106,6 +107,7 @@ public class OtpActivity extends AppCompatActivity {
         OtpRequest otpRequest=new OtpRequest();
         otpRequest.setOtp(sotp);
         otpRequest.setShgId(sessionManager.getShgId());
+        otpRequest.setDeviceToken(new FirebaseToken().getFirebaseToken());
 
         if(serviceApi==null) serviceApi= retrofit.create(ServiceApi.class);
         Call<OtpResponse> call=serviceApi.getOtpResponse(otpRequest);

@@ -53,8 +53,6 @@ public class HomeActivity extends AppCompatActivity {
 
         initSlider();
 
-        initFirebaseNotification();
-
         Log.i("animesh",new SessionManager(HomeActivity.this).getToken());
 
         stock.setOnClickListener(new View.OnClickListener() {
@@ -85,21 +83,6 @@ public class HomeActivity extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-    }
-
-    private void initFirebaseNotification() {
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-                        String token = task.getResult();
-                        Log.d("animesh", token);
-                    }
-                });
     }
 
     private void initSlider() {
