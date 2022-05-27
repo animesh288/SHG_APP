@@ -39,7 +39,7 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
         bidSubRequests=new ArrayList<>();
 
         for(int i=0;i<itemList.size();i++){
-            bidSubRequests.add(new BidSubRequest(itemList.get(i).getItemId(),0,0));
+            bidSubRequests.add(new BidSubRequest(itemList.get(i).getItemId(),0.0,0.0));
         }
     }
 
@@ -54,6 +54,7 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
     public void onBindViewHolder(@NonNull BidHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.itemName.setText(itemList.get(position).getItemName());
         holder.itemQuantity.setText(itemList.get(position).getItemQuantity()+" "+itemList.get(position).getItemUnit());
+        holder.itemDescription.setText(itemList.get(position).getItemDescription());
 
 //        holder.bidQuantity.setText("0");
 
@@ -65,7 +66,7 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s!=null && s.length()>0) bidSubRequests.get(position).setQuantity(Integer.parseInt(s.toString()));
+                if(s!=null && s.length()>0) bidSubRequests.get(position).setQuantity(Double.parseDouble(s.toString()));
             }
 
             @Override
@@ -81,7 +82,7 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s!=null && s.length()>0) bidSubRequests.get(position).setUnitPrice(Integer.parseInt(s.toString()));
+                if(s!=null && s.length()>0) bidSubRequests.get(position).setUnitPrice(Double.parseDouble(s.toString()));
             }
 
             @Override

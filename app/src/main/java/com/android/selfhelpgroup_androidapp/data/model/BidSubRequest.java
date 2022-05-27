@@ -8,12 +8,12 @@ public class BidSubRequest {
     private String productId;
 
     @SerializedName("quantity")
-    private Integer quantity;
+    private Double quantity;
 
     @SerializedName("unitprice")
-    private Integer unitPrice;
+    private Double unitPrice;
 
-    public BidSubRequest(String productId, Integer quantity,Integer unitPrice) {
+    public BidSubRequest(String productId, Double quantity,Double unitPrice) {
         this.productId = productId;
         this.quantity = quantity;
         this.unitPrice=unitPrice;
@@ -30,19 +30,19 @@ public class BidSubRequest {
         this.productId = productId;
     }
 
-    public Integer getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
-    public Integer getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(Integer unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 }

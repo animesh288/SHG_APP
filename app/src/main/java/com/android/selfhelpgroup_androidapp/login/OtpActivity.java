@@ -1,14 +1,18 @@
 package com.android.selfhelpgroup_androidapp.login;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
@@ -22,6 +26,9 @@ import com.android.selfhelpgroup_androidapp.network.ServiceApi;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import javax.inject.Inject;
 
@@ -107,31 +114,42 @@ public class OtpActivity extends AppCompatActivity {
         OtpRequest otpRequest=new OtpRequest();
         otpRequest.setOtp(sotp);
         otpRequest.setShgId(sessionManager.getShgId());
-        otpRequest.setDeviceToken(new FirebaseToken().getFirebaseToken());
 
-        if(serviceApi==null) serviceApi= retrofit.create(ServiceApi.class);
-        Call<OtpResponse> call=serviceApi.getOtpResponse(otpRequest);
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        if(serviceApi==null) serviceApi= retrofit.create(ServiceApi.class);
+                        otpRequest.setDeviceToken(task.getResult());
+                        System.out.println(otpRequest.getDeviceToken());
+                        Call<OtpResponse> call=serviceApi.getOtpResponse(otpRequest);
 
-        call.enqueue(new Callback<OtpResponse>() {
-            @Override
-            public void onResponse(Call<OtpResponse> call, Response<OtpResponse> response) {
-                if(response.isSuccessful()){
-                    OtpResponse otpResponse=response.body();
-                    sessionManager.saveToken(otpResponse.getToken());
-                    startActivity(new Intent(OtpActivity.this, HomeActivity.class));
-                    finish();
-                }else{
-                    Toast.makeText(OtpActivity.this, "incorrect otp", Toast.LENGTH_SHORT).show();
-                    pd.dismiss();
-                }
-            }
+                        call.enqueue(new Callback<OtpResponse>() {
+                            @Override
+                            public void onResponse(Call<OtpResponse> call, Response<OtpResponse> response) {
+                                if(response.isSuccessful()){
+                                    OtpResponse otpResponse=response.body();
+                                    sessionManager.saveToken(otpResponse.getToken());
+                                    startActivity(new Intent(OtpActivity.this, HomeActivity.class));
+                                    finish();
+                                }else{
+                                    Toast.makeText(OtpActivity.this, getResources().getString(R.string.incorrect_otp), Toast.LENGTH_SHORT).show();
+                                    pd.dismiss();
+                                }
+                            }
 
-            @Override
-            public void onFailure(Call<OtpResponse> call, Throwable t) {
-                Toast.makeText(OtpActivity.this, "incorrect otp", Toast.LENGTH_SHORT).show();
-                pd.dismiss();
-            }
-        });
+                            @Override
+                            public void onFailure(Call<OtpResponse> call, Throwable t) {
+                                Toast.makeText(OtpActivity.this, getResources().getString(R.string.incorrect_otp), Toast.LENGTH_SHORT).show();
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                });
     }
 
     private void init(){
@@ -141,7 +159,7 @@ public class OtpActivity extends AppCompatActivity {
         resendotp=findViewById(R.id.resend);
         sessionManager=new SessionManager(OtpActivity.this);
         pd=new ProgressDialog(OtpActivity.this);
-
+        pd.setCancelable(false);
         text2.setText(getResources().getString(R.string.otp_sent_1)+" "+sessionManager.getContact()+" "+getResources().getString(R.string.otp_sent_2));
     }
 }

@@ -30,4 +30,8 @@
     <string name="quantity">मात्रा</string>
     <string name="priceperunit">प्रति इकाई मूल्य</string>
     <string name="relogin_message">सत्र समाप्त हुआ। फिर से लॉगिन करें</string>
+    <string name="incorrect_otp">गलत ओटीपी</string>
+    <string name="comleted_order">पूर्ण आर्डर</string>
+    <string name="check_internet">इंटरनेट की जाँच करें</string>
+    <string name="order_completed">आर्डर पूरा हुआ</string>
 </resources>

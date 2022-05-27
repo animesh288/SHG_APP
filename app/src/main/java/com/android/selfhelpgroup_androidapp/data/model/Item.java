@@ -16,7 +16,7 @@ public class Item implements Serializable {
     private String itemName;
 
     @SerializedName("itemquantity")
-    private Integer itemQuantity;
+    private Double itemQuantity;
 
     @SerializedName("itemprice")
     private Integer itemPrice;
@@ -51,11 +51,11 @@ public class Item implements Serializable {
         this.itemName = itemName;
     }
 
-    public Integer getItemQuantity() {
+    public Double getItemQuantity() {
         return itemQuantity;
     }
 
-    public void setItemQuantity(Integer itemQuantity) {
+    public void setItemQuantity(Double itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
 

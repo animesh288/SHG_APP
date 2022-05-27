@@ -13,6 +13,7 @@ import com.android.selfhelpgroup_androidapp.approvedOrders.holder.ApprovedOrderH
 import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrderListener;
 import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHolder> {
@@ -20,6 +21,7 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
     List<ApprovedOrder> orderList;
     Context context;
     ApprovedOrderListener approvedOrderListener;
+    SimpleDateFormat simpleDateFormat1,simpleDateFormat2;
 
     public List<ApprovedOrder> getOrderList() {
         return orderList;
@@ -40,6 +42,8 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
     public ApprovedOrderAdapter(Context context, ApprovedOrderListener approvedOrderListener) {
         this.context = context;
         this.approvedOrderListener = approvedOrderListener;
+        simpleDateFormat1=new SimpleDateFormat("dd-MM-yyyy");
+        simpleDateFormat2=new SimpleDateFormat("HH:mm a");
     }
 
     @NonNull
@@ -54,6 +58,9 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
         holder.instituteName.setText(orderList.get(position).getInstituteName());
         holder.departmentName.setText(orderList.get(position).getDepartment());
         holder.instituteLocation.setText("पता : "+orderList.get(position).getInstituteLocation());
+        holder.updateDate.setText("स्वीकृति तिथि : "+simpleDateFormat1.format(orderList.get(position).getUpdatedAt()));
+        holder.updateTime.setText("स्वीकृति समय : "+ simpleDateFormat2.format(orderList.get(position).getUpdatedAt()));
+
     }
 
     @Override

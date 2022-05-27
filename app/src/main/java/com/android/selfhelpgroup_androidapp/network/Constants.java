@@ -20,4 +20,6 @@ public class Constants {
 
     public static final String BID_URL="shg/bid";
 
+    public static final String ORDER_DELIVERED="shg/orderdelivered";
+
 }

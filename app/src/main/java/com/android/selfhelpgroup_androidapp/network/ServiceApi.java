@@ -2,6 +2,7 @@ package com.android.selfhelpgroup_androidapp.network;
 
 import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrderResponse;
 import com.android.selfhelpgroup_androidapp.data.model.BidRequest;
+import com.android.selfhelpgroup_androidapp.data.model.CompletedRequest;
 import com.android.selfhelpgroup_androidapp.data.model.DeleteProductRequest;
 import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
 import com.android.selfhelpgroup_androidapp.data.model.LoginResponse;
@@ -46,5 +47,10 @@ public interface ServiceApi {
     @POST(Constants.BID_URL)
     @Headers({"Content-type: application/json"})
     Call<Message> bidProduct(@Header("Authorization") String token, @Body BidRequest bidRequest);
+
+    @POST(Constants.ORDER_DELIVERED)
+    Call<Message> completed(@Header("Authorization") String token, @Body CompletedRequest completedRequest);
+
+
 
 }

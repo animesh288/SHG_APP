@@ -12,7 +12,7 @@ import com.android.selfhelpgroup_androidapp.orders.listener.OrderClickListener;
 
 public class OrderHolder extends RecyclerView.ViewHolder {
 
-    public TextView instituteName,departmentName,instituteLocation,updateDate;
+    public TextView instituteName,departmentName,instituteLocation,updateDate,updateTime;
 
     public OrderHolder(@NonNull View itemView, OrderClickListener orderClickListener) {
         super(itemView);
@@ -21,6 +21,7 @@ public class OrderHolder extends RecyclerView.ViewHolder {
         departmentName=itemView.findViewById(R.id.departmentName);
         instituteLocation=itemView.findViewById(R.id.instituteLocation);
         updateDate=itemView.findViewById(R.id.updateDate);
+        updateTime=itemView.findViewById(R.id.updateTime);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

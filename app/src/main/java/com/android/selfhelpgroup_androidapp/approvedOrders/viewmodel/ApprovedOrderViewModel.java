@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrder;
 import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrderResponse;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
@@ -50,6 +51,7 @@ public class ApprovedOrderViewModel extends AndroidViewModel {
     private void createCall(Context context) {
         progressDialog=new ProgressDialog(context);
         progressDialog.setMessage("loading...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
         if(NetworkUtil.isNetworkConnected(context)){
             Call<ApprovedOrderResponse> call=serviceApi.getApprovedOrders("Bearer "+ new SessionManager(context).getToken());
@@ -77,7 +79,7 @@ public class ApprovedOrderViewModel extends AndroidViewModel {
                 }
             });
         }else{
-            Toast.makeText(context, "No internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.check_internet, Toast.LENGTH_SHORT).show();
             progressDialog.dismiss();
         }
     }

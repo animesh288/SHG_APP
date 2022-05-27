@@ -21,9 +21,8 @@ public class FirebaseToken {
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "Fetching FCM registration token failed", task.getException());
                             return;
-                        }else{
-                            token=task.getResult();
                         }
+                        token=task.getResult();
                         Log.d("animesh", task.getResult());
                     }
                 });

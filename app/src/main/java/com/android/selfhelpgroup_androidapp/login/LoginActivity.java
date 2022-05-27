@@ -66,8 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         LoginRequest loginRequest=new LoginRequest();
         loginRequest.setContact(phone);
 
-        serviceApi= retrofit.create(ServiceApi.class);
-
         Call<LoginResponse> call=serviceApi.getLoginResponse(loginRequest);
 
         call.enqueue(new Callback<LoginResponse>() {
@@ -81,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this,OtpActivity.class));
                     finish();
                 }
-                else Toast.makeText(LoginActivity.this, "invalid number", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(LoginActivity.this, "अमान्य फ़ोन नंबर", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -97,5 +95,6 @@ public class LoginActivity extends AppCompatActivity {
         submitbtn=findViewById(R.id.submitbtn);
         sessionManager=new SessionManager(LoginActivity.this);
         pd=new ProgressDialog(this);
+        pd.setCancelable(false);
     }
 }

@@ -13,7 +13,7 @@ import com.android.selfhelpgroup_androidapp.itemBid.listener.ItemBidListener;
 
 public class BidHolder extends RecyclerView.ViewHolder {
 
-    public TextView itemName,itemQuantity;;
+    public TextView itemName,itemQuantity,itemDescription;
     public EditText bidQuantity,bidPrice;
 
     public BidHolder(@NonNull View itemView) {
@@ -23,6 +23,7 @@ public class BidHolder extends RecyclerView.ViewHolder {
         itemQuantity=itemView.findViewById(R.id.itemQuantity);
         bidQuantity=itemView.findViewById(R.id.bidQuantity);
         bidPrice=itemView.findViewById(R.id.bidPrice);
+        itemDescription=itemView.findViewById(R.id.itemDescription);
 
 
 

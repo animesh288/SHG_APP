@@ -3,6 +3,7 @@ package com.android.selfhelpgroup_androidapp.data.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 public class ApprovedOrder implements Serializable {
@@ -20,10 +21,13 @@ public class ApprovedOrder implements Serializable {
     private String instituteName;
 
     @SerializedName("_id")
-    private String id;
+    private String bidId;
 
     @SerializedName("status")
     private String status;
+    
+    @SerializedName("updatedAt")
+    private Date updatedAt;
 
 
     @SerializedName("products")
@@ -95,5 +99,21 @@ public class ApprovedOrder implements Serializable {
 
     public void setProducts(List<ApprovedProduct> products) {
         this.products = products;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getBidId() {
+        return bidId;
+    }
+
+    public void setBidId(String bidId) {
+        this.bidId = bidId;
     }
 }

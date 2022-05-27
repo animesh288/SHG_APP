@@ -13,6 +13,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +35,13 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ImageView stock,orders,approved,logout;
+    LinearLayout orders,approved;
+    ImageView logout;
     AlertDialog alertDialog;
     AlertDialog.Builder ab;
     SliderView sliderView;
     ArrayList<SliderData> sliderDataArrayList;
     SliderAdapter adapter;
-    TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +56,6 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.i("animesh",new SessionManager(HomeActivity.this).getToken());
 
-        stock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,StockActivity.class));
-            }
-        });
 
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,14 +101,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        stock=findViewById(R.id.stock);
         orders=findViewById(R.id.orders);
-        approved=findViewById(R.id.approved);
+        approved=findViewById(R.id.approvedOrders);
         logout=findViewById(R.id.logout);
         sliderView=findViewById(R.id.slider);
-        description=findViewById(R.id.description);
-
-        description.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private void initAlertDialog() {

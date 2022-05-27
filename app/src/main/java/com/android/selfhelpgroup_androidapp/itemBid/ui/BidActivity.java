@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -41,6 +43,7 @@ public class BidActivity extends AppCompatActivity {
     ItemBidAdapter itemBidAdapter;
     Button submitBtn;
     BidRequest bidRequest;
+    ProgressDialog pd;
 
     @Inject
     Retrofit retrofit;
@@ -56,6 +59,9 @@ public class BidActivity extends AppCompatActivity {
         Intent intent=getIntent();
         order= (Order) intent.getSerializableExtra("Order");
         items=order.getItems();
+        pd=new ProgressDialog(BidActivity.this);
+        pd.setCancelable(false);
+        pd.setMessage("wait...");
 
         ((BaseApplication)getApplication()).getNetworkComponent().inject(BidActivity.this);
 
@@ -73,6 +79,7 @@ public class BidActivity extends AppCompatActivity {
             public void onClick(View v) {
                 bidRequest.setProducts(itemBidAdapter.getBidSubRequests());
                 bidRequest.setOrderId(order.getId());
+                pd.show();
                 createCall();
             }
         });
@@ -88,7 +95,7 @@ public class BidActivity extends AppCompatActivity {
             }
         }
         if(local==null || local.size()==0){
-            Toast.makeText(this, "add product", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "प्रोडक्ट दर्ज करें", Toast.LENGTH_SHORT).show();
             return;
         }
         bidRequest.setProducts(local);
@@ -103,6 +110,7 @@ public class BidActivity extends AppCompatActivity {
                         finish();
                     }else{
                         try {
+                            pd.dismiss();
                             Toast.makeText(BidActivity.this, response.errorBody().string(), Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -112,7 +120,9 @@ public class BidActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Message> call, Throwable t) {
+                    Log.i("animeshbid",t.getMessage());
                     Toast.makeText(BidActivity.this, "call failed", Toast.LENGTH_SHORT).show();
+                    pd.dismiss();
                 }
             });
         }

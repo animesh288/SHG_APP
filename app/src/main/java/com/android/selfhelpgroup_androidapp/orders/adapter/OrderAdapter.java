@@ -28,7 +28,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderHolder> {
     List<Order> orderList;
     Context context;
     OrderClickListener orderClickListener;
-    SimpleDateFormat simpleDateFormat;
+    SimpleDateFormat simpleDateFormat,simpleDateFormat2;
 
 
     @Inject
@@ -44,6 +44,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderHolder> {
         ((BaseApplication)context.getApplicationContext()).getNetworkComponent().inject(OrderAdapter.this);
         serviceApi=retrofit.create(ServiceApi.class);
         simpleDateFormat=new SimpleDateFormat("dd-MM-yyyy");
+        simpleDateFormat2=new SimpleDateFormat("HH:mm a");
 
     }
 
@@ -76,6 +77,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderHolder> {
         holder.departmentName.setText(orderList.get(position).getDepartment());
         holder.instituteLocation.setText("पता : "+orderList.get(position).getInstituteLocation());
         holder.updateDate.setText("आर्डर की तारीख : "+simpleDateFormat.format(orderList.get(position).getUpdatedAt()));
+        holder.updateTime.setText("आर्डर का समय : "+ simpleDateFormat2.format(orderList.get(position).getUpdatedAt()));
     }
 
     @Override

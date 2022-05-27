@@ -10,7 +10,7 @@ public class ApprovedProduct implements Serializable {
     private String product;
 
     @SerializedName("quantity")
-    private Integer quantity;
+    private Double quantity;
 
     @SerializedName("unit")
     private String unit;
@@ -24,7 +24,7 @@ public class ApprovedProduct implements Serializable {
     public ApprovedProduct() {
     }
 
-    public ApprovedProduct(String product, Integer quantity, String unit, String id,Integer price) {
+    public ApprovedProduct(String product, Double quantity, String unit, String id,Integer price) {
         this.product = product;
         this.quantity = quantity;
         this.unit = unit;
@@ -40,11 +40,11 @@ public class ApprovedProduct implements Serializable {
         this.product = product;
     }
 
-    public Integer getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
