@@ -61,7 +61,7 @@ public class ApprovedOrderDetails extends AppCompatActivity {
             public void onClick(View v) {
                 completed.setEnabled(false);
                 if(NetworkUtil.isNetworkConnected(ApprovedOrderDetails.this)){
-                    Call<Message> call=serviceApi.completed("Bearer "+ new SessionManager(ApprovedOrderDetails.this).getToken(),new CompletedRequest(approvedOrder.getId()));
+                    Call<Message> call=serviceApi.completed("Bearer "+ new SessionManager(ApprovedOrderDetails.this).getToken(),new CompletedRequest(approvedOrder.getBidId()));
                     call.enqueue(new Callback<Message>() {
                         @Override
                         public void onResponse(Call<Message> call, Response<Message> response) {
@@ -70,12 +70,7 @@ public class ApprovedOrderDetails extends AppCompatActivity {
                                 Toast.makeText(ApprovedOrderDetails.this, "अनुरोध भेज दिया गया है", Toast.LENGTH_SHORT).show();
                                 finish();
                             }else{
-                                completed.setEnabled(true);
-                                try {
-                                    Log.i("animesh",response.errorBody().string());
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                                Toast.makeText(ApprovedOrderDetails.this, "ऑर्डर पहले ही डिलीवर हो चुका है", Toast.LENGTH_SHORT).show();
                             }
                         }
 

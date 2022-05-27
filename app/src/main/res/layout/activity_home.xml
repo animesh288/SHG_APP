@@ -111,36 +111,31 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/orders"
                     android:layout_weight="1"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="15dp">
 
-                    <LinearLayout
-                        android:id="@+id/orders"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/orders"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/order"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="18dp"
-                            android:textColor="@color/black"/>
-                    </LinearLayout>
+                        android:background="@drawable/orders"
+                        android:text="@string/order"
+                        android:fontFamily="@font/poppinsbold"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:gravity="bottom"
+                        android:textAlignment="center"
+                        tools:ignore="RtlCompat" />
 
 
                 </androidx.cardview.widget.CardView>
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/approvedOrders"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
@@ -148,25 +143,18 @@
                     app:cardCornerRadius="15dp">
 
 
-                    <LinearLayout
-                        android:id="@+id/approvedOrders"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/approved"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/approved_stock"
-                            android:textAlignment="center"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="18dp"
-                            android:textColor="@color/black"/>
-                    </LinearLayout>
+                        android:background="@drawable/approved"
+                        android:text="@string/approved_stock"
+                        android:fontFamily="@font/poppinsbold"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:gravity="bottom"
+                        android:textAlignment="center"
+                        tools:ignore="RtlCompat" />
+
 
                 </androidx.cardview.widget.CardView>
 
@@ -180,31 +168,24 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/completedOrders"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="15dp">
 
-                    <LinearLayout
-                        android:id="@+id/completedOrders"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/completed"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/comleted_order"
-                            android:textAlignment="center"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="18dp"
-                            android:textColor="@color/black"/>
-                    </LinearLayout>
+                        android:background="@drawable/completed"
+                        android:text="@string/comleted_order"
+                        android:fontFamily="@font/poppinsbold"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:gravity="bottom"
+                        android:textAlignment="center"
+                        tools:ignore="RtlCompat" />
 
 
                 </androidx.cardview.widget.CardView>
