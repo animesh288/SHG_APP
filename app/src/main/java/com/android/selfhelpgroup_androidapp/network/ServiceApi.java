@@ -2,6 +2,7 @@ package com.android.selfhelpgroup_androidapp.network;
 
 import com.android.selfhelpgroup_androidapp.data.model.ApprovedOrderResponse;
 import com.android.selfhelpgroup_androidapp.data.model.BidRequest;
+import com.android.selfhelpgroup_androidapp.data.model.CompletedOrderResponse;
 import com.android.selfhelpgroup_androidapp.data.model.CompletedRequest;
 import com.android.selfhelpgroup_androidapp.data.model.DeleteProductRequest;
 import com.android.selfhelpgroup_androidapp.data.model.LoginRequest;
@@ -52,5 +53,7 @@ public interface ServiceApi {
     Call<Message> completed(@Header("Authorization") String token, @Body CompletedRequest completedRequest);
 
 
+    @GET(Constants.COMPLETED_ORDER_URL)
+    Call<CompletedOrderResponse> getCompletedOrders(@Header("Authorization") String token);
 
 }

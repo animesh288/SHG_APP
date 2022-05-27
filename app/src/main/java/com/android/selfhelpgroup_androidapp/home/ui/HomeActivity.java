@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
+import com.android.selfhelpgroup_androidapp.completedOrders.ui.CompletedOrdersActivity;
 import com.android.selfhelpgroup_androidapp.data.model.SliderData;
 import com.android.selfhelpgroup_androidapp.home.ImageUrls;
 import com.android.selfhelpgroup_androidapp.home.adapter.SliderAdapter;
@@ -35,7 +36,7 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    LinearLayout orders,approved;
+    LinearLayout orders,approved,completed;
     ImageView logout;
     AlertDialog alertDialog;
     AlertDialog.Builder ab;
@@ -56,7 +57,12 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.i("animesh",new SessionManager(HomeActivity.this).getToken());
 
-
+        completed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, CompletedOrdersActivity.class));
+            }
+        });
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +111,7 @@ public class HomeActivity extends AppCompatActivity {
         approved=findViewById(R.id.approvedOrders);
         logout=findViewById(R.id.logout);
         sliderView=findViewById(R.id.slider);
+        completed=findViewById(R.id.completedOrders);
     }
 
     private void initAlertDialog() {

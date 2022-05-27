@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class ApprovedProduct implements Serializable {
+public class CompletedProduct implements Serializable {
 
     @SerializedName("shgproduct")
     private String product;
@@ -15,21 +15,21 @@ public class ApprovedProduct implements Serializable {
     @SerializedName("unit")
     private String unit;
 
-    @SerializedName("_id")
-    private String id;
-
     @SerializedName("totalprice")
     private Double price;
 
-    public ApprovedProduct() {
+    @SerializedName("unitprice")
+    private Double unitPrice;
+
+    public CompletedProduct() {
     }
 
-    public ApprovedProduct(String product, Double quantity, String unit, String id,Double price) {
+    public CompletedProduct(String product, Double quantity, String unit, Double price, Double unitPrice) {
         this.product = product;
         this.quantity = quantity;
         this.unit = unit;
-        this.id = id;
-        this.price=price;
+        this.price = price;
+        this.unitPrice = unitPrice;
     }
 
     public String getProduct() {
@@ -56,14 +56,6 @@ public class ApprovedProduct implements Serializable {
         this.unit = unit;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -71,5 +63,12 @@ public class ApprovedProduct implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
-}
 
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+}

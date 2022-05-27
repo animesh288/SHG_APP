@@ -22,4 +22,6 @@ public class Constants {
 
     public static final String ORDER_DELIVERED="shg/orderdelivered";
 
+    public static final String COMPLETED_ORDER_URL="shg/getcompletedorders";
+
 }

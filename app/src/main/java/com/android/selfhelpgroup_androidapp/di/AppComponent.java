@@ -4,6 +4,7 @@ import com.android.selfhelpgroup_androidapp.AddProductActivity;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderDetails;
 import com.android.selfhelpgroup_androidapp.approvedOrders.viewmodel.ApprovedOrderViewModel;
+import com.android.selfhelpgroup_androidapp.completedOrders.viewmodel.CompletedOrderViewModel;
 import com.android.selfhelpgroup_androidapp.itemBid.ui.BidActivity;
 import com.android.selfhelpgroup_androidapp.login.LoginActivity;
 import com.android.selfhelpgroup_androidapp.login.OtpActivity;
@@ -29,4 +30,5 @@ public interface AppComponent {
     void inject(ApprovedOrderDetails approvedOrderDetails);
     void inject(OrderAdapter orderAdapter);
     void inject(BidActivity bidActivity);
+    void inject(CompletedOrderViewModel completedOrderViewModel);
 }
