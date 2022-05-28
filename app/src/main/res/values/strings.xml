@@ -1,4 +1,6 @@
 <resources>
+    <string name="navigation_open">Open Navigation Drawer</string>
+    <string name="navigation_close">Close Navigation Drawer</string>
     <string name="app_name">SelfHelpGroup-AndroidApp</string>
     <string name="name">छत्तीसगढ़ शासन</string>
     <string name="otp">ओटीपी के लिए मोबाइल नंबर दर्ज करें</string>
@@ -34,4 +36,8 @@
     <string name="comleted_order">पूर्ण आर्डर</string>
     <string name="check_internet">इंटरनेट की जाँच करें</string>
     <string name="order_completed">आर्डर पूरा हुआ</string>
+    <string name="profile">प्रोफाइल</string>
+    <string name="contact">संपर्क करें</string>
+    <string name="about_us">प्रोजेक्ट के बारे में</string>
+    <string name="logout">लॉगआउट</string>
 </resources>
