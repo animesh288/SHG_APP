@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.selfhelpgroup_androidapp.AboutUsActivity;
 import com.android.selfhelpgroup_androidapp.ProfileActivity;
 import com.android.selfhelpgroup_androidapp.R;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
@@ -79,6 +80,8 @@ public class HomeActivity extends AppCompatActivity {
                     alertDialog.show();
                 }else if(id==R.id.profile){
                     startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                }else if(id==R.id.aboutus){
+                    startActivity(new Intent(HomeActivity.this, AboutUsActivity.class));
                 }
                 return true;
             }

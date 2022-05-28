@@ -26,10 +26,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i1=new Intent(MainActivity.this, LoginActivity.class);
-                Intent i2=new Intent(MainActivity.this, HomeActivity.class);
-                if(new SessionManager(MainActivity.this).getToken()!=null) startActivity(i2);
-                else
-                    startActivity(i1);
+
+                startActivity(i1);
 
                 finish();
             }
