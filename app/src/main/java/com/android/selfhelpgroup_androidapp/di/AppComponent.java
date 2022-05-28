@@ -1,6 +1,7 @@
 package com.android.selfhelpgroup_androidapp.di;
 
 import com.android.selfhelpgroup_androidapp.AddProductActivity;
+import com.android.selfhelpgroup_androidapp.ProfileActivity;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderActivity;
 import com.android.selfhelpgroup_androidapp.approvedOrders.ui.ApprovedOrderDetails;
 import com.android.selfhelpgroup_androidapp.approvedOrders.viewmodel.ApprovedOrderViewModel;
@@ -31,4 +32,5 @@ public interface AppComponent {
     void inject(OrderAdapter orderAdapter);
     void inject(BidActivity bidActivity);
     void inject(CompletedOrderViewModel completedOrderViewModel);
+    void inject(ProfileActivity profileActivity);
 }

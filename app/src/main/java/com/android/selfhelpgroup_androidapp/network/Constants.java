@@ -24,4 +24,6 @@ public class Constants {
 
     public static final String COMPLETED_ORDER_URL="shg/getcompletedorders";
 
+    public static final String PROFILE_URL="shg/profile";
+
 }

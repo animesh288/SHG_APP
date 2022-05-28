@@ -13,6 +13,7 @@ import com.android.selfhelpgroup_androidapp.data.model.OtpRequest;
 import com.android.selfhelpgroup_androidapp.data.model.OtpResponse;
 import com.android.selfhelpgroup_androidapp.data.model.Product;
 import com.android.selfhelpgroup_androidapp.data.model.ProductResponse;
+import com.android.selfhelpgroup_androidapp.data.model.Profile;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -55,5 +56,8 @@ public interface ServiceApi {
 
     @GET(Constants.COMPLETED_ORDER_URL)
     Call<CompletedOrderResponse> getCompletedOrders(@Header("Authorization") String token);
+
+    @GET(Constants.PROFILE_URL)
+    Call<Profile> getProfile(@Header("Authorization") String token);
 
 }
