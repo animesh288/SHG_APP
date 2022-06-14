@@ -30,6 +30,9 @@ public class CompletedOrder implements Serializable {
     @SerializedName("_id")
     private String bidId;
 
+    @SerializedName("totalamount")
+    private double totalAmount;
+
     public CompletedOrder(String orderId, String department, String instituteLocation, String instituteName, Date updatedAt, List<CompletedProduct> products, String bidId) {
         this.orderId = orderId;
         this.department = department;
@@ -97,5 +100,13 @@ public class CompletedOrder implements Serializable {
 
     public void setBidId(String bidId) {
         this.bidId = bidId;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

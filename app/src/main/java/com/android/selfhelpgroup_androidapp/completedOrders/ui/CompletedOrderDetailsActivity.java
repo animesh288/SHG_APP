@@ -19,7 +19,7 @@ import com.android.selfhelpgroup_androidapp.data.model.CompletedOrder;
 public class CompletedOrderDetailsActivity extends AppCompatActivity {
 
     CompletedOrder completedOrder;
-    TextView instituteName,departmentName,instituteLocation;
+    TextView instituteName,departmentName,instituteLocation,total;
     RecyclerView recyclerView;
 
     @Override
@@ -37,10 +37,12 @@ public class CompletedOrderDetailsActivity extends AppCompatActivity {
         instituteLocation=findViewById(R.id.instituteLocation);
         departmentName=findViewById(R.id.departmentName);
         recyclerView=findViewById(R.id.recyclerView);
+        total=findViewById(R.id.total);
 
         instituteLocation.setText(completedOrder.getInstituteLocation());
         instituteName.setText(completedOrder.getInstituteName());
         departmentName.setText(completedOrder.getDepartment());
+        total.setText("Rs. "+completedOrder.getTotalAmount());
         initRecyclerView();
     }
 

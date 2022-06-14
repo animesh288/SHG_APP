@@ -33,6 +33,9 @@ public class ApprovedOrder implements Serializable {
     @SerializedName("products")
     private List<ApprovedProduct> products;
 
+    @SerializedName("totalamount")
+    private double totalAmount;
+
 
 
     public ApprovedOrder(String id, String department, String instituteLocation, String instituteName) {
@@ -115,5 +118,13 @@ public class ApprovedOrder implements Serializable {
 
     public void setBidId(String bidId) {
         this.bidId = bidId;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

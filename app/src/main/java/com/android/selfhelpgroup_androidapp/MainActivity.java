@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.android.selfhelpgroup_androidapp.completedOrders.ui.CompletedOrdersActivity;
 import com.android.selfhelpgroup_androidapp.home.ui.HomeActivity;
 import com.android.selfhelpgroup_androidapp.login.LoginActivity;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;

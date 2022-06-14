@@ -81,8 +81,23 @@
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recyclerView"
         android:id="@+id/orderCompleted"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedcorner"
+        android:paddingStart="35dp"
+        android:paddingEnd="35dp"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/orderCompleted"
+        app:layout_constraintBottom_toBottomOf="@id/orderCompleted"
+        android:id="@+id/total"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

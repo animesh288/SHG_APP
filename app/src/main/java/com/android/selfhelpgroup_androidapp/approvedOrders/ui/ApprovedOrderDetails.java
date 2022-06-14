@@ -43,7 +43,7 @@ public class ApprovedOrderDetails extends AppCompatActivity {
     ServiceApi serviceApi;
 
     ApprovedOrder approvedOrder;
-    TextView instituteName,departmentName,instituteLocation;
+    TextView instituteName,departmentName,instituteLocation,total;
     RecyclerView recyclerView;
     Button completed;
 
@@ -95,10 +95,13 @@ public class ApprovedOrderDetails extends AppCompatActivity {
         departmentName=findViewById(R.id.departmentName);
         recyclerView=findViewById(R.id.recyclerView);
         completed=findViewById(R.id.orderCompleted);
+        total=findViewById(R.id.total);
 
         instituteLocation.setText(approvedOrder.getInstituteLocation());
         instituteName.setText(approvedOrder.getInstituteName());
         departmentName.setText(approvedOrder.getDepartment());
+        total.setText("Rs. "+approvedOrder.getTotalAmount());
+
         initRecyclerView();
     }
 
