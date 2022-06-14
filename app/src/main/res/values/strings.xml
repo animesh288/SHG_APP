@@ -40,4 +40,5 @@
     <string name="contact">संपर्क करें</string>
     <string name="about_us">प्रोजेक्ट के बारे में</string>
     <string name="logout">लॉगआउट</string>
+    <string name="success">सफल</string>
 </resources>

@@ -20,10 +20,19 @@
             android:layout_height="wrap_content"
             android:background="@color/theme"
             app:layout_constraintEnd_toEndOf="parent"
-            app:title="online procurement system"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:title=" "
             app:titleTextColor="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsbold"
+                android:text="online procurement system"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -101,18 +110,10 @@
                         android:layout_weight="1"
                         app:cardCornerRadius="15dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/orders"
-                            android:fontFamily="@font/poppinsbold"
-                            android:gravity="bottom"
-                            android:text="@string/order"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
-                            tools:ignore="RtlCompat" />
-
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/orders" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -126,17 +127,10 @@
                         app:cardCornerRadius="15dp">
 
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/approved"
-                            android:fontFamily="@font/poppinsbold"
-                            android:gravity="bottom"
-                            android:text="@string/approved_stock"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
-                            tools:ignore="RtlCompat" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/approved" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -159,47 +153,26 @@
                         android:layout_weight="1"
                         app:cardCornerRadius="15dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/completed"
-                            android:fontFamily="@font/poppinsbold"
-                            android:gravity="bottom"
-                            android:text="@string/comleted_order"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
-                            tools:ignore="RtlCompat" />
-
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/completed" />
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/info"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         app:cardCornerRadius="15dp">
 
-                        <LinearLayout
-                            android:id="@+id/dummy"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:fontFamily="@font/poppinsbold"
-                                android:textAlignment="center"
-                                android:textColor="@color/black"
-                                android:textSize="18dp" />
-                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/info" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -221,7 +194,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/headerfile"
         app:menu="@menu/sidemenu" />
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

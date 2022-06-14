@@ -106,7 +106,7 @@ public class BidActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Message> call, Response<Message> response) {
                     if(response.isSuccessful()){
-                        Toast.makeText(BidActivity.this, "success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BidActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
                         try {

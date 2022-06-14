@@ -44,7 +44,7 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView orders,approved,completed;
+    CardView orders,approved,completed,info;
     AlertDialog alertDialog;
     AlertDialog.Builder ab;
     SliderView sliderView;
@@ -109,6 +109,12 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,AboutUsActivity.class));
+            }
+        });
     }
 
     private void initSlider() {
@@ -136,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
         approved=findViewById(R.id.approvedOrders);
         sliderView=findViewById(R.id.slider);
         completed=findViewById(R.id.completedOrders);
+        info=findViewById(R.id.info);
         drawerLayout=findViewById(R.id.drawerLayout);
         navigationView=findViewById(R.id.navigationView);
         toolbar=findViewById(R.id.toolbar);
