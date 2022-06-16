@@ -61,7 +61,7 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
                     recyclerView.setAdapter(orderAdapter);
                     orderAdapter.notifyDataSetChanged();
                 }else{
-                    Toast.makeText(OrdersActivity.this, "no orders to show", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrdersActivity.this, "कोई आर्डर नहीं है", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -80,4 +80,10 @@ public class OrdersActivity extends AppCompatActivity implements OrderClickListe
         startActivity(intent);
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
 }

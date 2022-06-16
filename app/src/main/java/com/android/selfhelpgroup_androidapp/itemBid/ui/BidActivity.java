@@ -20,6 +20,7 @@ import com.android.selfhelpgroup_androidapp.data.model.Message;
 import com.android.selfhelpgroup_androidapp.data.model.Order;
 import com.android.selfhelpgroup_androidapp.itemBid.adapter.ItemBidAdapter;
 import com.android.selfhelpgroup_androidapp.network.ServiceApi;
+import com.android.selfhelpgroup_androidapp.orders.ui.OrdersActivity;
 import com.android.selfhelpgroup_androidapp.util.BaseApplication;
 import com.android.selfhelpgroup_androidapp.util.NetworkUtil;
 import com.android.selfhelpgroup_androidapp.util.SessionManager;
@@ -95,6 +96,7 @@ public class BidActivity extends AppCompatActivity {
             }
         }
         if(local==null || local.size()==0){
+            pd.dismiss();
             Toast.makeText(this, "प्रोडक्ट दर्ज करें", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -109,19 +111,15 @@ public class BidActivity extends AppCompatActivity {
                         Toast.makeText(BidActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
-                        try {
-                            pd.dismiss();
-                            Toast.makeText(BidActivity.this, response.errorBody().string(), Toast.LENGTH_SHORT).show();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        pd.dismiss();
+                        Toast.makeText(BidActivity.this, "अमान्य अनुरोध", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Message> call, Throwable t) {
                     Log.i("animeshbid",t.getMessage());
-                    Toast.makeText(BidActivity.this, "call failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BidActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     pd.dismiss();
                 }
             });
