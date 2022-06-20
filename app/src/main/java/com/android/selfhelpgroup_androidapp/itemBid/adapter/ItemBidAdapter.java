@@ -102,4 +102,9 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
     public int getItemViewType(int position){
         return position;
     }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
 }
