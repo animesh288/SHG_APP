@@ -100,7 +100,7 @@ public class ApprovedOrderDetails extends AppCompatActivity {
         instituteLocation.setText(approvedOrder.getInstituteLocation());
         instituteName.setText(approvedOrder.getInstituteName());
         departmentName.setText(approvedOrder.getDepartment());
-        total.setText("Rs. "+approvedOrder.getTotalAmount());
+        total.setText("₹ "+approvedOrder.getTotalAmount());
 
         initRecyclerView();
     }

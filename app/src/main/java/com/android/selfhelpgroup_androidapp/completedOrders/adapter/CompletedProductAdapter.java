@@ -51,8 +51,8 @@ public class CompletedProductAdapter extends RecyclerView.Adapter<CompletedProdu
     @Override
     public void onBindViewHolder(@NonNull CompletedProductHolder holder, int position) {
         holder.itemName.setText(productList.get(position).getProduct());
-        holder.itemQuantity.setText(productList.get(position).getQuantity()+productList.get(position).getUnit());
-        holder.price.setText(productList.get(position).getPrice()+" ₹");
+        holder.itemQuantity.setText(productList.get(position).getUnitPrice()+" x "+ productList.get(position).getQuantity()+productList.get(position).getUnit());
+        holder.price.setText(String.format("%.2f", productList.get(position).getPrice())+" ₹");
     }
 
     @Override

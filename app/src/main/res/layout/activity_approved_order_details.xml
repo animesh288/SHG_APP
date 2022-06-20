@@ -84,14 +84,16 @@
         app:layout_constraintTop_toBottomOf="@id/recyclerView"
         android:id="@+id/orderCompleted"/>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/roundedcorner"
+        android:background="@drawable/box2"
         android:paddingStart="35dp"
         android:paddingEnd="35dp"
+        android:textColor="@color/theme"
         android:fontFamily="@font/poppinsbold"
         android:layout_margin="5dp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/orderCompleted"
         app:layout_constraintBottom_toBottomOf="@id/orderCompleted"

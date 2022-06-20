@@ -21,6 +21,9 @@ public class ApprovedProduct implements Serializable {
     @SerializedName("totalprice")
     private Double price;
 
+    @SerializedName("unitprice")
+    private Double unitPrice;
+
     public ApprovedProduct() {
     }
 
@@ -70,6 +73,14 @@ public class ApprovedProduct implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }
 

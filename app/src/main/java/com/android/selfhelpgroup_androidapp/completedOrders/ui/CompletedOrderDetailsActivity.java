@@ -42,7 +42,7 @@ public class CompletedOrderDetailsActivity extends AppCompatActivity {
         instituteLocation.setText(completedOrder.getInstituteLocation());
         instituteName.setText(completedOrder.getInstituteName());
         departmentName.setText(completedOrder.getDepartment());
-        total.setText("Rs. "+completedOrder.getTotalAmount());
+        total.setText("₹ "+completedOrder.getTotalAmount());
         initRecyclerView();
     }
 

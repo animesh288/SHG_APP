@@ -97,4 +97,9 @@ public class ItemBidAdapter extends RecyclerView.Adapter<BidHolder> {
     public int getItemCount() {
         return itemList==null?0:itemList.size();
     }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
 }
