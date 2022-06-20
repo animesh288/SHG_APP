@@ -67,4 +67,14 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
     public int getItemCount() {
         return orderList==null?0:orderList.size();
     }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
 }

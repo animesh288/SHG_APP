@@ -71,4 +71,14 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderHo
     public int getItemCount() {
         return orderList==null?0:orderList.size();
     }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
 }

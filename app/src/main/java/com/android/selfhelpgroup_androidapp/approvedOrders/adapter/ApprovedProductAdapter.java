@@ -58,4 +58,14 @@ public class ApprovedProductAdapter extends RecyclerView.Adapter<ApprovedProduct
     public int getItemCount() {
         return productList==null?0:productList.size();
     }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
 }

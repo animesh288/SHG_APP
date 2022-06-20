@@ -59,4 +59,14 @@ public class CompletedProductAdapter extends RecyclerView.Adapter<CompletedProdu
     public int getItemCount() {
         return productList==null?0:productList.size();
     }
+
+    @Override
+    public int getItemViewType(int position){
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
 }
