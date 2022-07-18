@@ -11,7 +11,7 @@ import com.android.selfhelpgroup_androidapp.approvedOrders.listener.ApprovedOrde
 
 public class ApprovedOrderHolder extends RecyclerView.ViewHolder {
 
-    public TextView instituteName,departmentName,instituteLocation,updateDate,updateTime;
+    public TextView instituteName,departmentName,instituteLocation,updateDate,updateTime,instituteContact;
 
     public ApprovedOrderHolder(@NonNull View itemView, ApprovedOrderListener approvedOrderListener) {
         super(itemView);
@@ -21,6 +21,7 @@ public class ApprovedOrderHolder extends RecyclerView.ViewHolder {
         instituteLocation=itemView.findViewById(R.id.instituteLocation);
         updateDate=itemView.findViewById(R.id.updateDate);
         updateTime=itemView.findViewById(R.id.updateTime);
+        instituteContact=itemView.findViewById(R.id.instituteContact);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

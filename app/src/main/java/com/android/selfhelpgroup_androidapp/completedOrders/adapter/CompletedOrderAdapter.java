@@ -64,6 +64,8 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderHo
         holder.instituteLocation.setText("पता : "+orderList.get(position).getInstituteLocation());
         holder.updateDate.setText("तिथि : "+simpleDateFormat1.format(orderList.get(position).getUpdatedAt()));
         holder.updateTime.setText("समय : "+ simpleDateFormat2.format(orderList.get(position).getUpdatedAt()));
+        holder.instituteContact.setText("फ़ोन : "+orderList.get(position).getInstituteContact());
+
 
     }
 

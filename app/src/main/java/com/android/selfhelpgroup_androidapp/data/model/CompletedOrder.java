@@ -20,6 +20,9 @@ public class CompletedOrder implements Serializable {
     @SerializedName("institutename")
     private String instituteName;
 
+    @SerializedName("institutecontact")
+    private String instituteContact;
+
     @SerializedName("updatedAt")
     private Date updatedAt;
 
@@ -108,5 +111,13 @@ public class CompletedOrder implements Serializable {
 
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public String getInstituteContact() {
+        return instituteContact;
+    }
+
+    public void setInstituteContact(String instituteContact) {
+        this.instituteContact = instituteContact;
     }
 }

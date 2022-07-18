@@ -17,6 +17,9 @@ public class ApprovedOrder implements Serializable {
     @SerializedName("institutelocation")
     private String instituteLocation;
 
+    @SerializedName("institutecontact")
+    private String instituteContact;
+
     @SerializedName("institutename")
     private String instituteName;
 
@@ -126,5 +129,13 @@ public class ApprovedOrder implements Serializable {
 
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public String getInstituteContact() {
+        return instituteContact;
+    }
+
+    public void setInstituteContact(String instituteContact) {
+        this.instituteContact = instituteContact;
     }
 }

@@ -60,6 +60,7 @@ public class ApprovedOrderAdapter extends RecyclerView.Adapter<ApprovedOrderHold
         holder.instituteLocation.setText("पता : "+orderList.get(position).getInstituteLocation());
         holder.updateDate.setText("स्वीकृति तिथि : "+simpleDateFormat1.format(orderList.get(position).getUpdatedAt()));
         holder.updateTime.setText("स्वीकृति समय : "+ simpleDateFormat2.format(orderList.get(position).getUpdatedAt()));
+        holder.instituteContact.setText("फ़ोन : "+orderList.get(position).getInstituteContact());
 
     }
 

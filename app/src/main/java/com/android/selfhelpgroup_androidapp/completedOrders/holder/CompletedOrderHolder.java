@@ -11,7 +11,7 @@ import com.android.selfhelpgroup_androidapp.completedOrders.listener.CompletedOr
 
 public class CompletedOrderHolder extends RecyclerView.ViewHolder {
 
-    public TextView instituteName,departmentName,instituteLocation,updateDate,updateTime;
+    public TextView instituteName,departmentName,instituteLocation,updateDate,updateTime,instituteContact;
 
 
     public CompletedOrderHolder(@NonNull View itemView, CompletedOrderListener completedOrderListener) {
@@ -21,6 +21,8 @@ public class CompletedOrderHolder extends RecyclerView.ViewHolder {
         instituteLocation=itemView.findViewById(R.id.instituteLocation);
         updateDate=itemView.findViewById(R.id.updateDate);
         updateTime=itemView.findViewById(R.id.updateTime);
+        instituteContact=itemView.findViewById(R.id.instituteContact);
+
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
